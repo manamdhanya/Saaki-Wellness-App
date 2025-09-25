@@ -5,8 +5,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LanguageContext } from "../../context/LanguageContext";
 
 export default function ChatbotTest() {
-
-    const { language, setLanguage } = useContext(LanguageContext);
+    const { language } = useContext(LanguageContext);
 
     const translations = {
         en: { home: "Home", team: "Our Team", blog: "Blog", about: "About", copyright: "© 2025. All Rights Reserved." },
@@ -17,21 +16,15 @@ export default function ChatbotTest() {
     };
 
     const t = translations[language];
-    const chatbotId = process.env.REACT_APP_CHATBASE_ID;
 
-    useEffect(() => {
-        if (!document.getElementById("chatbase-script")) {
-            const script = document.createElement("script");
-            script.src = "https://www.chatbase.co/embed.min.js";
-            script.id = process.env.REACT_APP_CHATBASE_ID;
-            script.async = true;
-            document.body.appendChild(script);
-        }
-    }, []);
+    // Dynamic chatbot iframe with language
+    const chatbotUrl = `https://www.chatbase.co/chatbot-iframe/YRDpLoWJsUHjDFotcBxNv?lang=${language}`;
+
 
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
 
+            {/* Header */}
             <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
                 <div className="flex items-center space-x-2">
                     <Link to="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></Link>
@@ -45,16 +38,17 @@ export default function ChatbotTest() {
                 </nav>
             </header>
 
+            {/* Chatbot */}
             <div className="flex-grow">
                 <iframe
-                    src={`https://www.chatbase.co/chatbot-iframe/${chatbotId}`}
+                    src={chatbotUrl}
                     title="Sakhi Didi Chatbot"
                     className="w-full h-full border-0"
                     style={{ minHeight: "calc(100vh - 120px)" }}
                 ></iframe>
             </div>
 
-
+            {/* Footer */}
             <footer className="flex justify-between items-center w-full px-8 py-6 bg-[#FFFFE0]">
                 <span className="text-sm text-gray-600">{t.copyright}</span>
                 <div className="flex space-x-4 text-purple-700 text-lg">
