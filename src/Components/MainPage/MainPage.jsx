@@ -32,12 +32,12 @@ const MainPage = () => {
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
             <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
-                {/* Logo */}
+
                 <div className="flex items-center space-x-2">
                     <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
                 </div>
 
-                {/* Navigation */}
+
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
                     <Link to="/" className="underline text-[#910AE4]">{t.home}</Link>
                     <Link to="/team" className="hover:underline">{t.team}</Link>
@@ -45,7 +45,7 @@ const MainPage = () => {
                     <Link to="/about" className="hover:underline">{t.about}</Link>
                 </nav>
 
-                {/* Language Selector */}
+
                 <div className="w-full sm:w-auto">
                     <select
                         value={language}
@@ -83,9 +83,11 @@ const MainPage = () => {
                             <img src={Chat} alt="Chat Icon" className="w-10 h-10 mb-2" />
                             <h3 className="font-semibold text-lg">{t.chat}</h3>
                             <p className="text-sm">{t.chatInfo}</p>
-                            <button className="mt-3 px-4 py-2 bg-[#FFFFE0] text-purple-800 rounded-md font-semibold hover:bg-[#e7e2cf]">
-                                {t.chat}
-                            </button>
+                            <Link to="/chat">
+                                <button className="mt-3 px-4 py-2 bg-[#FFFFE0] text-purple-800 rounded-md font-semibold hover:bg-[#e7e2cf]">
+                                    {t.chat}
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
