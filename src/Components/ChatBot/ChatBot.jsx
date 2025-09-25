@@ -17,8 +17,8 @@ export default function ChatbotTest() {
 
     const t = translations[language];
 
-    // Dynamic chatbot iframe with language
-    const chatbotUrl = `https://www.chatbase.co/chatbot-iframe/YRDpLoWJsUHjDFotcBxNv?lang=${language}`;
+    const chatbotId = process.env.REACT_APP_CHATBASE_ID
+    const chatbotUrl = `https://www.chatbase.co/chatbot-iframe/${chatbotId}`;
 
 
     return (
