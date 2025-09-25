@@ -15,16 +15,16 @@ const MainPage = () => {
                 </div>
                 <nav className="flex space-x-5 text-purple-800 font-medium text-xs sm:text-lg">
 
-                    <a href="#" className="underline text-[#910AE4]">
+                    <a href="/" className="underline text-[#910AE4]">
                         Home
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/team" className="hover:underline">
                         Our Team
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/blog" className="hover:underline">
                         Blog
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/about" className="hover:underline">
                         About
                     </a>
                 </nav>

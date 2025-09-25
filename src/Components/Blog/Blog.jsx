@@ -11,20 +11,20 @@ const Blog = () => {
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
             <header className="flex items-center justify-between px-8 py-4" >
                 <div className="flex items-center space-x-2">
-                    <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+                    <a href="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></a>
                 </div>
                 <nav className="flex space-x-5 text-purple-800 font-medium text-xs sm:text-lg">
 
-                    <a href="#" className="hover:underline">
+                    <a href="/" className="hover:underline">
                         Home
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/team" className="hover:underline">
                         Our Team
                     </a>
-                    <a href="#" className="underline text-[#910AE4]">
+                    <a href="/blog" className="underline text-[#910AE4]">
                         Blog
                     </a>
-                    <a href="#" className="hover:underline">
+                    <a href="/about" className="hover:underline">
                         About
                     </a>
                 </nav>
