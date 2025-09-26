@@ -20,31 +20,107 @@ const MainPage = () => {
     ];
 
     const translations = {
-        en: { home: "Home", team: "Our Team", blog: "Blog", about: "About", heading: "Your Health, Your Way, Always", emergency: "Emergency Contact", emergencyInfo: "For emergencies, contact local services immediately.", chat: "Chat Now", chatInfo: "Schedule a private doctor callback for personalized advice.", workingHours: "Working Hours", hours: ["Mon - Fri 8:00 am - 9:00 pm", "Saturday 9:00 am - 8:00 pm", "Sunday 10:00 am - 7:00 pm"], copyright: "© 2025. All Rights Reserved." },
-        hi: { home: "होम", team: "हमारी टीम", blog: "ब्लॉग", about: "हमारे बारे में", heading: "आपका स्वास्थ्य, आपका तरीका, हमेशा", emergency: "आपातकालीन संपर्क", emergencyInfo: "आपात स्थितियों में तुरंत स्थानीय सेवाओं से संपर्क करें।", chat: "अभी चैट करें", chatInfo: "व्यक्तिगत सलाह के लिए निजी डॉक्टर कॉलबैक शेड्यूल करें।", workingHours: "कार्य समय", hours: ["सोम - शु 8:00 पूर्वाह्न - 9:00 अपराह्न", "शनिवार 9:00 पूर्वाह्न - 8:00 अपराह्न", "रविवार 10:00 पूर्वाह्न - 7:00 अपराह्न"], copyright: "© 2025। सर्वाधिकार सुरक्षित।" },
-        te: { home: "హోమ్", team: "మన బృందం", blog: "బ్లాగ్", about: "మన గురించి", heading: "మీ ఆరోగ్యం, మీ విధంగా, ఎల్లప్పుడూ", emergency: "అత్యవసర సంప్రదింపు", emergencyInfo: "అత్యవసర పరిస్థితులలో, స్థానిక సేవలను తక్షణమే సంప్రదించండి.", chat: "ఇప్పుడు చాట్ చేయండి", chatInfo: "వ్యక్తిగత సలహా కోసం ప్రైవేట్ డాక్టర్ కాల్‌బ్యాక్ షెడ్యూల్ చేయండి.", workingHours: "వర్కింగ్ అవర్స్", hours: ["సోం - వె 8:00 am - 9:00 pm", "శనివారం 9:00 am - 8:00 pm", "ఆదివారం 10:00 am - 7:00 pm"], copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి." },
-        mr: { home: "मुखपृष्ठ", team: "आमची टीम", blog: "ब्लॉग", about: "आमच्या विषयी", heading: "तुमचे आरोग्य, तुमच्या पद्धतीने, नेहमी", emergency: "तत्काळ संपर्क", emergencyInfo: "आपत्कालीन परिस्थितीत स्थानिक सेवेशी त्वरित संपर्क साधा.", chat: "आता चॅट करा", chatInfo: "वैयक्तिक सल्ल्यासाठी खास डॉक्टर कॉलबॅक शेड्यूल करा.", workingHours: "कामाचे तास", hours: ["सोम - शुक्र 8:00 पूर्वी - 9:00 नंतर", "शनिवार 9:00 पूर्वी - 8:00 नंतर", "रविवार 10:00 पूर्वी - 7:00 नंतर"], copyright: "© 2025. सर्व हक्क राखीव." },
-        gu: { home: "હોમ", team: "અમારી ટીમ", blog: "બ્લૉગ", about: "અમારા વિશે", heading: "તમારું આરોગ્ય, તમારી રીત, હંમેશા", emergency: "જરૂરી સંપર્ક", emergencyInfo: "જરૂરી પરિસ્થિતિમાં સ્થાનિક સેવાઓ સાથે તરત સંપર્ક કરો.", chat: "હવે ચેટ કરો", chatInfo: "વ્યક્તિગત સલાહ માટે ખાનગી ડોક્ટર કોલબૅક શેડ્યૂલ કરો.", workingHours: "કાર્ય સમય", hours: ["સોમ - શુક્ર 8:00 AM - 9:00 PM", "શનિવાર 9:00 AM - 8:00 PM", "રવિવાર 10:00 AM - 7:00 PM"], copyright: "© 2025. સર્વ અધિકાર આરક્ષિત." }
+        en: {
+            home: "Home",
+            team: "Our Team",
+            blog: "Blog",
+            about: "About",
+            checkup: "Health Assessment",
+            periodTracker: "Period Tracker",
+            heading: "Your Health, Your Way, Always",
+            emergency: "Emergency Contact",
+            emergencyInfo: "For emergencies, contact local services immediately.",
+            chat: "Chat Now",
+            chatInfo: "Schedule a private doctor callback for personalized advice.",
+            workingHours: "Working Hours",
+            hours: ["Mon - Fri 8:00 am - 9:00 pm", "Saturday 9:00 am - 8:00 pm", "Sunday 10:00 am - 7:00 pm"],
+            copyright: "© 2025. All Rights Reserved."
+        },
+        hi: {
+            home: "होम",
+            team: "हमारी टीम",
+            blog: "ब्लॉग",
+            about: "हमारे बारे में",
+            checkup: "स्वास्थ्य मूल्यांकन",
+            periodTracker: "पीरियड ट्रैकर",
+            heading: "आपका स्वास्थ्य, आपका तरीका, हमेशा",
+            emergency: "आपातकालीन संपर्क",
+            emergencyInfo: "आपात स्थितियों में तुरंत स्थानीय सेवाओं से संपर्क करें।",
+            chat: "अभी चैट करें",
+            chatInfo: "व्यक्तिगत सलाह के लिए निजी डॉक्टर कॉलबैक शेड्यूल करें।",
+            workingHours: "कार्य समय",
+            hours: ["सोम - शु 8:00 पूर्वाह्न - 9:00 अपराह्न", "शनिवार 9:00 पूर्वाह्न - 8:00 अपराह्न", "रविवार 10:00 पूर्वाह्न - 7:00 अपराह्न"],
+            copyright: "© 2025। सर्वाधिकार सुरक्षित।"
+        },
+        te: {
+            home: "హోమ్",
+            team: "మన బృందం",
+            blog: "బ్లాగ్",
+            about: "మన గురించి",
+            checkup: "ఆరోగ్య అంచనా",
+            periodTracker: "పీరియడ్ ట్రాకర్",
+            heading: "మీ ఆరోగ్యం, మీ విధంగా, ఎల్లప్పుడూ",
+            emergency: "అత్యవసర సంప్రదింపు",
+            emergencyInfo: "అత్యవసర పరిస్థితులలో, స్థానిక సేవలను తక్షణమే సంప్రదించండి.",
+            chat: "ఇప్పుడు చాట్ చేయండి",
+            chatInfo: "వ్యక్తిగత సలహా కోసం ప్రైవేట్ డాక్టర్ కాల్‌బ్యాక్ షెడ్యూల్ చేయండి.",
+            workingHours: "వర్కింగ్ అవర్స్",
+            hours: ["సోం - వె 8:00 am - 9:00 pm", "శనివారం 9:00 am - 8:00 pm", "ఆదివారం 10:00 am - 7:00 pm"],
+            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి."
+        },
+        mr: {
+            home: "मुखपृष्ठ",
+            team: "आमची टीम",
+            blog: "ब्लॉग",
+            about: "आमच्या विषयी",
+            checkup: "आरोग्य मूल्यांकन",
+            periodTracker: "पाळी ट्रॅकर",
+            heading: "तुमचे आरोग्य, तुमच्या पद्धतीने, नेहमी",
+            emergency: "तत्काळ संपर्क",
+            emergencyInfo: "आपत्कालीन परिस्थितीत स्थानिक सेवेशी त्वरित संपर्क साधा.",
+            chat: "आता चॅट करा",
+            chatInfo: "वैयक्तिक सल्ल्यासाठी खास डॉक्टर कॉलबॅक शेड्यूल करा.",
+            workingHours: "कामाचे तास",
+            hours: ["सोम - शुक्र 8:00 पूर्वी - 9:00 नंतर", "शनिवार 9:00 पूर्वी - 8:00 नंतर", "रविवार 10:00 पूर्वी - 7:00 नंतर"],
+            copyright: "© 2025. सर्व हक्क राखीव."
+        },
+        gu: {
+            home: "હોમ",
+            team: "અમારી ટીમ",
+            blog: "બ્લૉગ",
+            about: "અમારા વિશે",
+            checkup: "હેલ્થ અસેસમેન્ટ",
+            periodTracker: "પિરિયડ ટ્રેકર",
+            heading: "તમારું આરોગ્ય, તમારી રીત, હંમેશા",
+            emergency: "જરૂરી સંપર્ક",
+            emergencyInfo: "જરૂરી પરિસ્થિતિમાં સ્થાનિક સેવાઓ સાથે તરત સંપર્ક કરો.",
+            chat: "હવે ચેટ કરો",
+            chatInfo: "વ્યક્તિગત સલાહ માટે ખાનગી ડોક્ટર કોલબૅક શેડ્યૂલ કરો.",
+            workingHours: "કાર્ય સમય",
+            hours: ["સોમ - શુક્ર 8:00 AM - 9:00 PM", "શનિવાર 9:00 AM - 8:00 PM", "રવિવાર 10:00 AM - 7:00 PM"],
+            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત."
+        }
     };
 
     const t = translations[language];
 
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
+            {/* Header */}
             <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
 
                 <div className="flex items-center space-x-2">
                     <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
                 </div>
 
-
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
                     <Link to="/" className="underline text-[#910AE4]">{t.home}</Link>
                     <Link to="/team" className="hover:underline">{t.team}</Link>
                     <Link to="/blog" className="hover:underline">{t.blog}</Link>
+                    <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
+                    <Link to="/period-tracker" className="hover:underline">{t.periodTracker}</Link>
                     <Link to="/about" className="hover:underline">{t.about}</Link>
                 </nav>
-
 
                 <div className="w-full sm:w-auto">
                     <select
@@ -61,12 +137,13 @@ const MainPage = () => {
                 </div>
             </header>
 
-
+            {/* Hero Section */}
             <section className="flex flex-col items-center text-center px-4">
                 <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mt-8">{t.heading}</h1>
                 <img src={VillageWomen} alt="Group of women" className="mt-6 rounded-3xl w-[90%] max-w-2xl object-cover" />
             </section>
 
+            {/* Info Section */}
             <section className="mt-12 bg-purple-800 text-[#FFFFE0] py-8">
                 <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                     <div>
@@ -103,6 +180,7 @@ const MainPage = () => {
                 </div>
             </section>
 
+            {/* Footer */}
             <div className="max-w-6xl mx-auto mt-8 flex flex-col sm:flex-row items-center sm:justify-between space-y-4 sm:space-y-0 sm:space-x-14 px-4">
                 <div className="flex items-center space-x-2">
                     <img src={logo} alt="Sakhi Didi Logo" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />

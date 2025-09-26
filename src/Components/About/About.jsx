@@ -5,7 +5,15 @@ import { LanguageContext } from "../../context/LanguageContext";
 import { Link } from "react-router-dom";
 
 const About = () => {
-    const { language } = useContext(LanguageContext);
+    const { language, setLanguage } = useContext(LanguageContext);
+
+    const languages = [
+        { code: "en", label: "English" },
+        { code: "hi", label: "हिंदी" },
+        { code: "te", label: "తెలుగు" },
+        { code: "mr", label: "मराठी" },
+        { code: "gu", label: "ગુજરાતી" },
+    ];
 
     const translations = {
         en: {
@@ -13,6 +21,8 @@ const About = () => {
             team: "Our Team",
             blog: "Blog",
             about: "About",
+            checkup: "Health Assessment",
+            periodTracker: "Period Tracker",
             missionHeading: "Our Mission",
             missionText: "Sakhi Didi empowers women of all ages especially those who may not have easy access to healthcare to ask questions, learn, and take charge of their health. We provide free, anonymous health support in multiple Indian languages through a friendly WhatsApp chatbot. Our mission is to bridge the health information gap and help women make informed, confident decisions about their well being.",
             valuesHeading: "Our Values",
@@ -30,6 +40,8 @@ const About = () => {
             team: "हमारी टीम",
             blog: "ब्लॉग",
             about: "हमारे बारे में",
+            checkup: "स्वास्थ्य मूल्यांकन",
+            periodTracker: "पीरियड ट्रैकर",
             missionHeading: "हमारा मिशन",
             missionText: "सखी दीदी सभी उम्र की महिलाओं को सशक्त बनाती है विशेष रूप से उन महिलाओं को जिनके लिए स्वास्थ्य सेवा तक पहुंच आसान नहीं है—वे सवाल पूछ सकें, सीख सकें और अपने स्वास्थ्य की जिम्मेदारी ले सकें। हम एक मित्रवत व्हाट्सएप चैटबोट के माध्यम से कई भारतीय भाषाओं में मुफ्त, गुमनाम स्वास्थ्य सहायता प्रदान करते हैं। हमारा मिशन स्वास्थ्य जानकारी के अंतर को पाटना और महिलाओं को उनकी भलाई के बारे में सूचित, आत्मविश्वासी निर्णय लेने में मदद करना है।",
             valuesHeading: "हमारे मूल्य",
@@ -47,6 +59,8 @@ const About = () => {
             team: "మన బృందం",
             blog: "బ్లాగ్",
             about: "మన గురించి",
+            checkup: "ఆరోగ్య అంచనాలు",
+            periodTracker: "పీరియడ్ ట్రాకర్",
             missionHeading: "మా లక్ష్యం",
             missionText: "సఖీ దిదీ అన్ని వయసుల మహిళలను శక్తివంతం చేస్తుంది—ప్రత్యేకంగా ఆరోగ్య సేవల వరకు సులభంగా లేని వారిని—వారు ప్రశ్నలు అడగగలగాలి, నేర్చుకోవాలి మరియు తమ ఆరోగ్యాన్ని దేనికంటే ముందుగా చూసుకోవాలి. మేము మిత్రమైన వాట్సాప్ చాట్‌బాట్ ద్వారా అనేక భారతీయ భాషలలో ఉచిత, గోప్యమైన ఆరోగ్య సహాయం అందిస్తాము. మా లక్ష్యం ఆరోగ్య సమాచారం లో ఉన్న అంతరం పూర్తిగా పోగొట్టడం మరియు మహిళలను స్వీయ-విశ్వాసంతో నిర్ణయాలు తీసుకోవడానికి సహాయపడటం.",
             valuesHeading: "మా విలువలు",
@@ -64,6 +78,8 @@ const About = () => {
             team: "आमची टीम",
             blog: "ब्लॉग",
             about: "आमच्या विषयी",
+            checkup: "आरोग्य मूल्यांकन",
+            periodTracker: "पाळी ट्रॅकर",
             missionHeading: "आमचे मिशन",
             missionText: "सखी दीदी सर्व वयोगटातील महिलांना सशक्त करते—विशेषतः त्या महिलांसाठी ज्या आरोग्य सेवा सहज उपलब्ध नाहीत—त्या प्रश्न विचारू शकतात, शिकू शकतात आणि त्यांच्या आरोग्याची जबाबदारी घेऊ शकतात. आम्ही मित्रवत व्हॉट्सअॅप चॅटबॉटद्वारे अनेक भारतीय भाषांमध्ये विनामूल्य, गुप्त आरोग्य समर्थन प्रदान करतो. आमचे ध्येय आरोग्य माहितीतील अंतर कमी करणे आणि महिलांना आत्मविश्वासपूर्ण निर्णय घेण्यास मदत करणे आहे.",
             valuesHeading: "आमची मूल्ये",
@@ -81,6 +97,8 @@ const About = () => {
             team: "અમારી ટીમ",
             blog: "બ્લૉગ",
             about: "અમારા વિશે",
+            checkup: "સ્વાસ્થ્ય મૂલ્યાંકન",
+            periodTracker: "પિરિયડ ટ્રેકર",
             missionHeading: "અમારું મિશન",
             missionText: "સાખી દીદી દરેક ઉંમરના મહિલાઓને સશક્ત બનાવે છે—વિશેષ કરીને તે મહિલાઓ જેમને આરોગ્ય સેવા સરળતાથી મળી નથી—જેઓ પ્રશ્નો પૂછે, શીખે અને પોતાના આરોગ્યનો હિસાબ રાખે. અમે મૈત્રીપૂર્ણ વોટ્સએપ ચેટબોટ મારફતે બહુવિધ ભારતીય ભાષાઓમાં મફત, ગોપ્ય આરોગ્ય સહાયતા પ્રદાન કરીએ છીએ. અમારું મિશન આરોગ્ય માહિતીની ખાલી જગ્યા ભરવું અને મહિલાઓને માહિતીનાં આધારે, આત્મવિશ્વાસભર્યા નિર્ણયો લેવા માટે મદદ કરવું છે.",
             valuesHeading: "અમારી મૂલ્યો",
@@ -104,12 +122,16 @@ const About = () => {
                 <div className="flex items-center space-x-2">
                     <Link to="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></Link>
                 </div>
+
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
                     <Link to="/">{t.home}</Link>
                     <Link to="/team">{t.team}</Link>
                     <Link to="/blog">{t.blog}</Link>
+                    <Link to="/health-assessment">{t.checkup}</Link>
+                    <Link to="/period-tracker">{t.periodTracker}</Link>
                     <Link to="/about" className="underline text-[#910AE4]">{t.about}</Link>
                 </nav>
+
             </header>
 
             {/* Mission Section */}

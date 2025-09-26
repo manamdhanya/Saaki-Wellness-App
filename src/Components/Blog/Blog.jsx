@@ -17,6 +17,8 @@ const Blog = () => {
             team: "Our Team",
             blog: "Blog",
             about: "About",
+            checkup: "Health Checkup",
+            periodTracker: "Period Tracker", // Added
             trending: "Trending",
             selfCare: "SELF-CARE & MENTAL HEALTH",
             posts: [
@@ -48,6 +50,8 @@ const Blog = () => {
             team: "हमारी टीम",
             blog: "ब्लॉग",
             about: "हमारे बारे में",
+            checkup: "स्वास्थ्य जांच",
+            periodTracker: "पीरियड ट्रैकर", // Added
             trending: "रुझानशील",
             selfCare: "स्वयं-देखभाल और मानसिक स्वास्थ्य",
             posts: [
@@ -79,6 +83,8 @@ const Blog = () => {
             team: "మన బృందం",
             blog: "బ్లాగ్",
             about: "మన గురించి",
+            checkup: "ఆరోగ్య తనిఖీ",
+            periodTracker: "పీరియడ్ ట్రాకర్", // Added
             trending: "ట్రెండింగ్",
             selfCare: "స్వీయ సంరక్షణ & మానసిక ఆరోగ్యం",
             posts: [
@@ -110,6 +116,8 @@ const Blog = () => {
             team: "आमची टीम",
             blog: "ब्लॉग",
             about: "आमच्या विषयी",
+            checkup: "आरोग्य तपासणी",
+            periodTracker: "पाळी ट्रॅकर", // Added
             trending: "ट्रेंडिंग",
             selfCare: "स्व-देखभाल आणि मानसिक आरोग्य",
             posts: [
@@ -141,6 +149,8 @@ const Blog = () => {
             team: "અમારી ટીમ",
             blog: "બ્લૉગ",
             about: "અમારા વિશે",
+            checkup: "હેલ્થ ચેકઅપ",
+            periodTracker: "પિરિયડ ટ્રેકર", // Added
             trending: "ટ્રેન્ડિંગ",
             selfCare: "સ્વ-સંભાળ & માનસિક આરોગ્ય",
             posts: [
@@ -161,7 +171,7 @@ const Blog = () => {
                 },
                 {
                     img: BipolarImg,
-                    title: "હું બાઇપોલર ડિસઓર્ડર સાથે જીવ છું, પરંતુ તે મારી ઓળખને નિર્ધારિત નથી કરે",
+                    title: "હું બાઇપોલર ડિસઓર્ડર સાથે જીવ છું, પરંતુ તે моей ઓળખને નિર્ધારિત નથી કરે",
                     link: "https://www.healthywomen.org/real-women-real-stories/living-with-bipolar-disorder"
                 }
             ],
@@ -173,16 +183,21 @@ const Blog = () => {
 
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
+            {/* Header */}
             <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
                 <div className="flex items-center space-x-2">
-                    <Link to="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></Link>
+                    <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
                 </div>
+
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-                    <Link to="/">{t.home}</Link>
-                    <Link to="/team">{t.team}</Link>
+                    <Link to="/" className="hover:underline">{t.home}</Link>
+                    <Link to="/team" className="hover:underline">{t.team}</Link>
                     <Link to="/blog" className="underline text-[#910AE4]">{t.blog}</Link>
-                    <Link to="/about">{t.about}</Link>
+                    <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
+                    <Link to="/period-tracker" className="hover:underline">{t.periodTracker}</Link> {/* Added */}
+                    <Link to="/about" className="hover:underline">{t.about}</Link>
                 </nav>
+
             </header>
 
             {/* Blog Sections */}

@@ -4,13 +4,14 @@ import MainPage from './Components/MainPage/MainPage';
 import OurTeam from './Components/OurTeam/OurTeam';
 import Blog from './Components/Blog/Blog';
 import About from './Components/About/About';
-import './App.css';
 import ChatbotTest from './Components/ChatBot/ChatBot';
+import HealthCheckup from './Components/Health Assessment/HealthAssessment';
+import PeriodTracker from './Components/PeriodTracker/PeriodTracker';
 import { LanguageProvider } from './context/LanguageContext';
+import './App.css';
 
 export default function App() {
   return (
-    
     <LanguageProvider>
       <Router>
         <Routes>
@@ -19,8 +20,10 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/chat" element={<ChatbotTest />} />
+          <Route path="/health-assessment" element={<HealthCheckup />} />
+          <Route path="/period-tracker" element={<PeriodTracker />} />
         </Routes>
       </Router>
-    </LanguageProvider> 
+    </LanguageProvider>
   );
 }
