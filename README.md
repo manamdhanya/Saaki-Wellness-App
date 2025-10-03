@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Saaki – AI-Driven Public Health Chatbot 🤖💙  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Saaki (Team Empower Her) is an **AI-powered health chatbot** designed for the **Smart India Hackathon 2025** under the *MedTech / BioTech / HealthTech* theme.  
+It provides **disease awareness, maternal and menstrual health guidance, and infectious disease information** for rural women and communities, helping reduce misinformation and empower better healthcare decisions.  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features  
+- 🧠 **AI-Driven Conversations**: Integrated with **Chatbase (GPT-4)** for natural health-related interactions.  
+- 🌸 **Women-Centric Health Guidance**: Focus on maternal, menstrual, and infectious diseases.  
+- 📱 **User-Friendly UI**: Built with **React + Tailwind CSS** for a clean and responsive interface.  
+- 🛠 **Assistive for Health Workers**: Supports ASHA/health workers with **AI-guided responses**.  
+- 🌍 **Scalable & Adaptable**: Can expand to multiple languages and rural regions.  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Tech Stack  
+- **Frontend**: React, Tailwind CSS, React Router  
+- **Chatbot Integration**: Chatbase.co (GPT-4 powered)  
+- **Design**: Figma prototypes  
+- **Deployment**: Render  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Project Structure  
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Saaki/
+│── public/              # Static files
+│── src/                 # Core application code
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Page-level views
+│   ├── chatbot/         # Chatbot integration
+│   └── App.js           # Main entry point
+│── package.json         # Dependencies & scripts
+│── README.md            # Project documentation
 
-### `npm run build`
+````
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚡ Getting Started  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the repository  
+```bash
+git clone https://github.com/your-username/saaki.git
+cd saaki
+````
 
-### `npm run eject`
+### 2. Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Start development server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. Build for production
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 Impact & Benefits
 
-### Code Splitting
+* ✅ Empowers **rural women** with reliable healthcare awareness.
+* ✅ Reduces **misinformation** and stigma on sensitive topics.
+* ✅ Encourages **early recognition of symptoms** and preventive action.
+* ✅ Saves **time & costs** by reducing unnecessary medical visits.
+* ✅ Scalable nationwide with **language and cultural adaptability**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🔮 Future Scope
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* 🌐 Multi-language support for rural communities.
+* 📞 Voice-enabled chatbot for illiterate populations.
+* 📊 Integration with government healthcare schemes.
+* 🧑‍⚕️ AI decision-support for ASHA/health workers.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📚 Research & References
 
-### Advanced Configuration
+* *Chatbots for Healthcare – IJNRD2403463*
+* *AI-Driven Healthcare Chatbot using Data Science with Python*
+* *Voice Enabled Chatbot for Healthcare – VI Sem Project*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 👩‍💻 Team – Empower Her
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with 💙 for **Smart India Hackathon 2025**
