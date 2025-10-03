@@ -1,4 +1,4 @@
-# Saaki – AI-Driven Public Health Chatbot 🤖💙  
+# Saaki – AI-Driven Public Health Chatbot  
 
 Saaki (Team Empower Her) is an **AI-powered health chatbot** designed for the **Smart India Hackathon 2025** under the *MedTech / BioTech / HealthTech* theme.  
 It provides **disease awareness, maternal and menstrual health guidance, and infectious disease information** for rural women and communities, helping reduce misinformation and empower better healthcare decisions.  
@@ -6,11 +6,11 @@ It provides **disease awareness, maternal and menstrual health guidance, and inf
 ---
 
 ## 🚀 Features  
-- 🧠 **AI-Driven Conversations**: Integrated with **Chatbase (GPT-4)** for natural health-related interactions.  
-- 🌸 **Women-Centric Health Guidance**: Focus on maternal, menstrual, and infectious diseases.  
-- 📱 **User-Friendly UI**: Built with **React + Tailwind CSS** for a clean and responsive interface.  
-- 🛠 **Assistive for Health Workers**: Supports ASHA/health workers with **AI-guided responses**.  
-- 🌍 **Scalable & Adaptable**: Can expand to multiple languages and rural regions.  
+- **AI-Driven Conversations**: Integrated with **Chatbase (GPT-4)** for natural health-related interactions.  
+- **Women-Centric Health Guidance**: Focus on maternal, menstrual, and infectious diseases.  
+- **User-Friendly UI**: Built with **React + Tailwind CSS** for a clean and responsive interface.  
+- **Assistive for Health Workers**: Supports ASHA/health workers with **AI-guided responses**.  
+- **Scalable & Adaptable**: Can expand to multiple languages and rural regions.  
 
 ---
 
@@ -19,23 +19,6 @@ It provides **disease awareness, maternal and menstrual health guidance, and inf
 - **Chatbot Integration**: Chatbase.co (GPT-4 powered)  
 - **Design**: Figma prototypes  
 - **Deployment**: Render  
-
----
-
-## 📂 Project Structure  
-```
-
-Saaki/
-│── public/              # Static files
-│── src/                 # Core application code
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Page-level views
-│   ├── chatbot/         # Chatbot integration
-│   └── App.js           # Main entry point
-│── package.json         # Dependencies & scripts
-│── README.md            # Project documentation
-
-````
 
 ---
 
