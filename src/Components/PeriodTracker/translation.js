@@ -31,7 +31,8 @@ export const translations = {
         phaseTips: "Phase Tips",
         backToCalendar: "Back to Calendar",
 
-        copyright: "© 2025. All Rights Reserved."
+        copyright: "© 2025. All Rights Reserved.",
+        logout: "Logout"
     },
 
     hi: {
@@ -59,7 +60,8 @@ export const translations = {
         tipWarmDrink: "गर्म पेय आराम और पाचन में मदद करते हैं।",
         phaseTips: "फेज़ टिप्स",
         backToCalendar: "कैलेंडर पर वापस जाएं",
-        copyright: "© 2025। सर्वाधिकार सुरक्षित।"
+        copyright: "© 2025। सर्वाधिकार सुरक्षित।",
+        logout: "लॉगआउट"
     },
 
     te: {
@@ -87,7 +89,8 @@ export const translations = {
         tipWarmDrink: "వార్మ్ డ్రింక్‌లు విశ్రాంతి మరియు జీర్ణానికి సహాయపడతాయి.",
         phaseTips: "ఫేజ్ సూచనలు",
         backToCalendar: "క్యాలెండర్‌కు తిరిగి వెళ్ళు",
-        copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి."
+        copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+        logout: "లాగ్ అవుట్"
     },
 
     mr: {
@@ -115,7 +118,8 @@ export const translations = {
         tipWarmDrink: "गरम पेये विश्रांती व पचन सुधारतात.",
         phaseTips: "फेज टिप्स",
         backToCalendar: "कॅलेंडरकडे परत जा",
-        copyright: "© 2025. सर्व हक्क राखीव."
+        copyright: "© 2025. सर्व हक्क राखीव.",
+        logout: "लॉगआउट"
     },
 
     gu: {
@@ -143,6 +147,7 @@ export const translations = {
         tipWarmDrink: "ગરમ પેય આરામ અને પાચન સહાય કરે છે.",
         phaseTips: "ફેઝ ટીપ્સ",
         backToCalendar: "કૅલેન્ડર પર પાછા જાઓ",
-        copyright: "© 2025. સર્વ અધિકાર આરક્ષિત."
+        copyright: "© 2025. સર્વ અધિકાર આરક્ષિત.",
+        logout: "લૉગ આઉટ"
     },
 };

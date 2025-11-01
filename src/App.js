@@ -7,7 +7,10 @@ import About from './Components/About/About';
 import ChatbotTest from './Components/ChatBot/ChatBot';
 import HealthCheckup from './Components/Health Assessment/HealthAssessment';
 import PeriodTracker from './Components/PeriodTracker/PeriodTracker';
+import Login from './Components/Signup/Login/login';
+import Signup from './Components/Signup/Login/signup';
 import { LanguageProvider } from './context/LanguageContext';
+import ProtectedRoute from './ProtectedRoute';
 import './App.css';
 
 export default function App() {
@@ -15,15 +18,19 @@ export default function App() {
     <LanguageProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/team" element={<OurTeam />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/chat" element={<ChatbotTest />} />
-          <Route path="/health-assessment" element={<HealthCheckup />} />
-          <Route path="/period-tracker" element={<PeriodTracker />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+          <Route path="/team" element={<ProtectedRoute><OurTeam /></ProtectedRoute>} />
+          <Route path="/blog" element={<ProtectedRoute><Blog /></ProtectedRoute>} />
+          <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+          <Route path="/chat" element={<ProtectedRoute><ChatbotTest /></ProtectedRoute>} />
+          <Route path="/health-assessment" element={<ProtectedRoute><HealthCheckup /></ProtectedRoute>} />
+          <Route path="/period-tracker" element={<ProtectedRoute><PeriodTracker /></ProtectedRoute>} />
         </Routes>
       </Router>
     </LanguageProvider>
+
   );
 }

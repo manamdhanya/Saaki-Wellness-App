@@ -4,6 +4,11 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import logo from "../../Assests/Logo.png";
 import { LanguageContext } from "../../context/LanguageContext";
 
+const handleLogout = () => {
+    localStorage.removeItem("sakhi_token");
+    window.location.href = "/";
+};
+
 const HealthCheckup = () => {
     const { language } = useContext(LanguageContext);
 
@@ -38,7 +43,8 @@ const HealthCheckup = () => {
             score: "Your Health Score",
             badHealth: "⚠️ Your health requires attention. Please consult a doctor or connect with our experts!",
             goodHealth: "🎉 Excellent! Your health seems good. Keep regular checkups!",
-            copyright: "© 2025. All Rights Reserved."
+            copyright: "© 2025. All Rights Reserved.",
+            logout: "Logout"
         },
         hi: {
             home: "होम",
@@ -70,7 +76,8 @@ const HealthCheckup = () => {
             score: "आपका स्वास्थ्य स्कोर",
             badHealth: "⚠️ आपके स्वास्थ्य को ध्यान देने की आवश्यकता है। कृपया डॉक्टर से मिलें या हमारे विशेषज्ञों से संपर्क करें!",
             goodHealth: "🎉 शानदार! आपका स्वास्थ्य अच्छा लगता है। नियमित जांच करवाते रहें!",
-            copyright: "© 2025। सर्वाधिकार सुरक्षित।"
+            copyright: "© 2025। सर्वाधिकार सुरक्षित।",
+            logout: "लॉगआउट"
         },
         te: {
             home: "హోమ్",
@@ -102,7 +109,8 @@ const HealthCheckup = () => {
             score: "మీ ఆరోగ్య స్కోరు",
             badHealth: "⚠️ మీ ఆరోగ్యానికి శ్రద్ధ అవసరం ఉంది. డాక్టర్‌ను సంప్రదించండి లేదా మా నిపుణులను సంప్రదించండి!",
             goodHealth: "🎉 అద్భుతం! మీ ఆరోగ్యం బాగుంది. క్రమం తప్పకుండా తనిఖీలు చేయించుకోండి!",
-            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి."
+            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+            logout: "లాగ్ అవుట్"
         },
         mr: {
             home: "मुखपृष्ठ",
@@ -134,7 +142,8 @@ const HealthCheckup = () => {
             score: "आपला आरोग्य स्कोअर",
             badHealth: "⚠️ आपल्या आरोग्याकडे लक्ष द्या. डॉक्टरांना भेटा किंवा आमच्या तज्ज्ञांशी संपर्क साधा!",
             goodHealth: "🎉 उत्कृष्ट! आपले आरोग्य चांगले आहे. नियमित तपासणी करत राहा!",
-            copyright: "© 2025. सर्व हक्क राखीव."
+            copyright: "© 2025. सर्व हक्क राखीव.",
+            logout: "लॉगआउट"
         },
         gu: {
             home: "હોમ",
@@ -166,7 +175,8 @@ const HealthCheckup = () => {
             score: "તમારો આરોગ્ય સ્કોર",
             badHealth: "⚠️ તમારા આરોગ્ય પર ધ્યાન આપવાની જરૂર છે. ડૉક્ટરને મળો અથવા અમારા નિષ્ણાતો સાથે જોડાઓ!",
             goodHealth: "🎉 શાનદાર! તમારું આરોગ્ય સારું છે. નિયમિત તપાસ કરાવતા રહો!",
-            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત."
+            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત.",
+            logout: "લૉગ આઉટ"
         }
     };
 
@@ -252,20 +262,34 @@ const HealthCheckup = () => {
 
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
-            <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+            <header className="relative flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+
+                {/* Logo */}
                 <div className="flex items-center space-x-2">
-                    <Link to="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></Link>
+                    <Link to="/home">
+                        <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+                    </Link>
                 </div>
 
+                {/* Navigation */}
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-                    <Link to="/">{t.home}</Link>
-                    <Link to="/team">{t.team}</Link>
-                    <Link to="/blog">{t.blog}</Link>
+                    <Link to="/home" className="hover:underline">{t.home}</Link>
+                    <Link to="/team" className="hover:underline">{t.team}</Link>
+                    <Link to="/blog" className="hover:underline">{t.blog}</Link>
                     <Link to="/health-assessment" className="underline text-[#910AE4]">{t.checkup}</Link>
-                    <Link to="/period-tracker">{t.periodTracker}</Link> {/* New Link added */}
-                    <Link to="/about">{t.about}</Link>
+                    <Link to="/period-tracker" className="hover:underline">{t.periodTracker}</Link>
+                    <Link to="/about" className="hover:underline">{t.about}</Link>
                 </nav>
+
+                {/* Logout Button */}
+                <button
+                    onClick={handleLogout}
+                    className=" bg-purple-800 text-[#FFFFE0] px-3 py-1.5 rounded-md text-sm font-medium shadow-lg hover:bg-purple-900 transition"
+                >
+                    {t.logout}
+                </button>
             </header>
+
 
             <section className="flex flex-col items-center py-10 px-6 text-center">
                 <h2 className="text-xl md:text-2xl font-semibold text-purple-800 mb-6">

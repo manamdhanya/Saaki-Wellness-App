@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaEnvelope, FaPhone } from "react-icons/fa6";
 import { LanguageContext } from "../../context/LanguageContext";
 
+const handleLogout = () => {
+  localStorage.removeItem("sakhi_token");
+  window.location.href = "/";
+};
+
 const OurTeam = () => {
   const { language } = useContext(LanguageContext);
 
@@ -33,6 +38,7 @@ const OurTeam = () => {
       doctor3Email: "deepa@sakhididi.com",
       doctor3Phone: "+91 9876543213",
       copyright: "© 2025. All Rights Reserved.",
+      logout: "Logout"
     },
     hi: {
       home: "होम",
@@ -56,6 +62,7 @@ const OurTeam = () => {
       doctor3Email: "deepa@sakhididi.com",
       doctor3Phone: "+91 9876543213",
       copyright: "© 2025। सर्वाधिकार सुरक्षित।",
+      logout: "लॉगआउट"
     },
     te: {
       home: "హోమ్",
@@ -79,6 +86,7 @@ const OurTeam = () => {
       doctor3Email: "deepa@sakhididi.com",
       doctor3Phone: "+91 9876543213",
       copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+      logout: "లాగ్ అవుట్"
     },
     mr: {
       home: "मुखपृष्ठ",
@@ -102,6 +110,7 @@ const OurTeam = () => {
       doctor3Email: "deepa@sakhididi.com",
       doctor3Phone: "+91 9876543213",
       copyright: "© 2025. सर्व हक्क राखीव.",
+      logout: "लॉगआउट"
     },
     gu: {
       home: "હોમ",
@@ -125,6 +134,7 @@ const OurTeam = () => {
       doctor3Email: "deepa@sakhididi.com",
       doctor3Phone: "+91 9876543213",
       copyright: "© 2025. સર્વ અધિકાર આરક્ષિત.",
+      logout: "લૉગ આઉટ"
     },
   };
 
@@ -157,20 +167,34 @@ const OurTeam = () => {
   return (
     <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
       {/* Header */}
-      <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+      <header className="relative flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+
+        {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+          <Link to="/home">
+            <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+          </Link>
         </div>
 
+        {/* Navigation */}
         <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-          <Link to="/" className="hover:underline">{t.home}</Link>
+          <Link to="/home" className="hover:underline">{t.home}</Link>
           <Link to="/team" className="underline text-[#910AE4]">{t.team}</Link>
           <Link to="/blog" className="hover:underline">{t.blog}</Link>
           <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
           <Link to="/period-tracker" className="hover:underline">{t.periodTracker}</Link>
           <Link to="/about" className="hover:underline">{t.about}</Link>
         </nav>
+
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className=" bg-purple-800 text-[#FFFFE0] px-3 py-1.5 rounded-md text-sm font-medium shadow-lg hover:bg-purple-900 transition"
+        >
+          {t.logout}
+        </button>
       </header>
+
 
       {/* Team Section */}
       <section className="bg-purple-800 text-[#FFFFE0] text-center py-16 px-6">

@@ -8,6 +8,12 @@ import Clock from "../../Assests/Clock.png";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LanguageContext } from "../../context/LanguageContext";
 
+const handleLogout = () => {
+    localStorage.removeItem("sakhi_token");
+    window.location.href = "/";
+};
+
+
 const MainPage = () => {
     const { language, setLanguage } = useContext(LanguageContext);
 
@@ -27,6 +33,7 @@ const MainPage = () => {
             about: "About",
             checkup: "Health Assessment",
             periodTracker: "Period Tracker",
+            logout: "Logout",
             heading: "Your Health, Your Way, Always",
             emergency: "Emergency Contact",
             emergencyInfo: "For emergencies, contact local services immediately.",
@@ -34,7 +41,8 @@ const MainPage = () => {
             chatInfo: "Schedule a private doctor callback for personalized advice.",
             workingHours: "Working Hours",
             hours: ["Mon - Fri 8:00 am - 9:00 pm", "Saturday 9:00 am - 8:00 pm", "Sunday 10:00 am - 7:00 pm"],
-            copyright: "© 2025. All Rights Reserved."
+            copyright: "© 2025. All Rights Reserved.",
+            logout: "Logout"
         },
         hi: {
             home: "होम",
@@ -50,7 +58,8 @@ const MainPage = () => {
             chatInfo: "व्यक्तिगत सलाह के लिए निजी डॉक्टर कॉलबैक शेड्यूल करें।",
             workingHours: "कार्य समय",
             hours: ["सोम - शु 8:00 पूर्वाह्न - 9:00 अपराह्न", "शनिवार 9:00 पूर्वाह्न - 8:00 अपराह्न", "रविवार 10:00 पूर्वाह्न - 7:00 अपराह्न"],
-            copyright: "© 2025। सर्वाधिकार सुरक्षित।"
+            copyright: "© 2025। सर्वाधिकार सुरक्षित।",
+            logout: "लॉगआउट"
         },
         te: {
             home: "హోమ్",
@@ -66,7 +75,8 @@ const MainPage = () => {
             chatInfo: "వ్యక్తిగత సలహా కోసం ప్రైవేట్ డాక్టర్ కాల్‌బ్యాక్ షెడ్యూల్ చేయండి.",
             workingHours: "వర్కింగ్ అవర్స్",
             hours: ["సోం - వె 8:00 am - 9:00 pm", "శనివారం 9:00 am - 8:00 pm", "ఆదివారం 10:00 am - 7:00 pm"],
-            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి."
+            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+            logout: "లాగ్ అవుట్"
         },
         mr: {
             home: "मुखपृष्ठ",
@@ -82,7 +92,8 @@ const MainPage = () => {
             chatInfo: "वैयक्तिक सल्ल्यासाठी खास डॉक्टर कॉलबॅक शेड्यूल करा.",
             workingHours: "कामाचे तास",
             hours: ["सोम - शुक्र 8:00 पूर्वी - 9:00 नंतर", "शनिवार 9:00 पूर्वी - 8:00 नंतर", "रविवार 10:00 पूर्वी - 7:00 नंतर"],
-            copyright: "© 2025. सर्व हक्क राखीव."
+            copyright: "© 2025. सर्व हक्क राखीव.",
+            logout: "लॉगआउट"
         },
         gu: {
             home: "હોમ",
@@ -98,7 +109,8 @@ const MainPage = () => {
             chatInfo: "વ્યક્તિગત સલાહ માટે ખાનગી ડોક્ટર કોલબૅક શેડ્યૂલ કરો.",
             workingHours: "કાર્ય સમય",
             hours: ["સોમ - શુક્ર 8:00 AM - 9:00 PM", "શનિવાર 9:00 AM - 8:00 PM", "રવિવાર 10:00 AM - 7:00 PM"],
-            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત."
+            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત.",
+            logout: "લૉગ આઉટ"
         }
     };
 
@@ -106,15 +118,19 @@ const MainPage = () => {
 
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
-            {/* Header */}
-            <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+            
+            <header className="relative flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
 
+                
                 <div className="flex items-center space-x-2">
-                    <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+                    <Link to="/home">
+                        <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+                    </Link>
                 </div>
 
+                
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-                    <Link to="/" className="underline text-[#910AE4]">{t.home}</Link>
+                    <Link to="/home" className="underline text-[#910AE4]">{t.home}</Link>
                     <Link to="/team" className="hover:underline">{t.team}</Link>
                     <Link to="/blog" className="hover:underline">{t.blog}</Link>
                     <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
@@ -122,28 +138,21 @@ const MainPage = () => {
                     <Link to="/about" className="hover:underline">{t.about}</Link>
                 </nav>
 
-                <div className="w-full sm:w-auto">
-                    <select
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value)}
-                        className="w-full sm:w-auto bg-purple-800 rounded px-2 py-2 text-[#FFFFE0] font-medium"
-                    >
-                        {languages.map((lang) => (
-                            <option key={lang.code} value={lang.code}>
-                                {lang.label}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+        
+                <button
+                    onClick={handleLogout}
+                    className=" bg-purple-800 text-[#FFFFE0] px-3 py-1.5 rounded-md text-sm font-medium shadow-lg hover:bg-purple-900 transition"
+                >
+                    {t.logout}
+                </button>
             </header>
 
-            {/* Hero Section */}
+
             <section className="flex flex-col items-center text-center px-4">
                 <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mt-8">{t.heading}</h1>
                 <img src={VillageWomen} alt="Group of women" className="mt-6 rounded-3xl w-[90%] max-w-2xl object-cover" />
             </section>
 
-            {/* Info Section */}
             <section className="mt-12 bg-purple-800 text-[#FFFFE0] py-8">
                 <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                     <div>

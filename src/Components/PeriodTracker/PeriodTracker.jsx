@@ -5,6 +5,11 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import logo from "../../Assests/Logo.png";
 import { translations } from "./translation";
 
+const handleLogout = () => {
+  localStorage.removeItem("sakhi_token");
+  window.location.href = "/";
+};
+
 const PeriodTracker = () => {
   const { language } = useContext(LanguageContext);
   const t = translations[language];
@@ -100,28 +105,34 @@ const PeriodTracker = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFFE0] text-purple-900">
       {/* Header */}
-      <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+      <header className="relative flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+
+        {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Sakhi Didi Logo"
-              className="w-20 h-20 object-contain"
-            />
+          <Link to="/home">
+            <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
           </Link>
         </div>
 
+        {/* Navigation */}
         <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-          <Link to="/">{t.home}</Link>
-          <Link to="/team">{t.team}</Link>
-          <Link to="/blog">{t.blog}</Link>
-          <Link to="/health-assessment" >
-            {t.checkup}
-          </Link>
+          <Link to="/home" className="hover:underline">{t.home}</Link>
+          <Link to="/team" className="hover:underline">{t.team}</Link>
+          <Link to="/blog" className="hover:underline">{t.blog}</Link>
+          <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
           <Link to="/period-tracker" className="underline text-[#910AE4]">{t.periodTracker}</Link>
-          <Link to="/about">{t.about}</Link>
+          <Link to="/about" className="hover:underline">{t.about}</Link>
         </nav>
+
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className=" bg-purple-800 text-[#FFFFE0] px-3 py-1.5 rounded-md text-sm font-medium shadow-lg hover:bg-purple-900 transition"
+        >
+          {t.logout}
+        </button>
       </header>
+
 
       <main className="flex-grow flex flex-col items-center px-4 sm:px-6 py-10 w-full">
         {/* Input Section */}

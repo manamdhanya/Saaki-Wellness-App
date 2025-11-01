@@ -4,6 +4,11 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LanguageContext } from "../../context/LanguageContext";
 import { Link } from "react-router-dom";
 
+const handleLogout = () => {
+    localStorage.removeItem("sakhi_token");
+    window.location.href = "/";
+};
+
 const About = () => {
     const { language, setLanguage } = useContext(LanguageContext);
 
@@ -33,7 +38,8 @@ const About = () => {
                 { title: "Digital Simplicity", text: "We meet women where they already are—on WhatsApp—with voice, text, and emojis." },
                 { title: "Community Connection", text: "We connect women to certified doctors and verified resources when they need more personalised care." }
             ],
-            copyright: "© 2025. All Rights Reserved."
+            copyright: "© 2025. All Rights Reserved.",
+            logout: "Logout"
         },
         hi: {
             home: "होम",
@@ -52,7 +58,8 @@ const About = () => {
                 { title: "डिजिटल सरलता", text: "हम महिलाओं से वहीं मिलते हैं जहां वे पहले से मौजूद हैं—व्हाट्सएप पर—वॉइस, टेक्स्ट और इमोजी के साथ।" },
                 { title: "सामुदायिक कनेक्शन", text: "जब उन्हें अधिक व्यक्तिगत देखभाल की आवश्यकता होती है, तो हम महिलाओं को प्रमाणित डॉक्टरों और सत्यापित संसाधनों से जोड़ते हैं।" }
             ],
-            copyright: "© 2025। सर्वाधिकार सुरक्षित।"
+            copyright: "© 2025। सर्वाधिकार सुरक्षित।",
+            logout: "लॉगआउट"
         },
         te: {
             home: "హోమ్",
@@ -71,7 +78,8 @@ const About = () => {
                 { title: "డిజిటల్ సరళత", text: "మేము మహిళలను ఇప్పటికే ఉన్న చోట—వాట్సాప్‌లో—వాయిస్, టెక్స్ట్ మరియు ఎమోజీలతో కలుస్తాము." },
                 { title: "సామాజిక కనెక్షన్", text: "వారు మరింత వ్యక్తిగతమైన సేవ అవసరమైతే, మేము మహిళలను ధృవీకృత డాక్టర్ల మరియు ప్రమాణీకృత వనరులకు కలుపుతాము." }
             ],
-            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి."
+            copyright: "© 2025. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+            logout: "లాగ్ అవుట్"
         },
         mr: {
             home: "मुखपृष्ठ",
@@ -90,7 +98,8 @@ const About = () => {
                 { title: "डिजिटल सुलभता", text: "आम्ही महिला ज्या ठिकाणी आधीच आहेत तिथे—व्हॉट्सअॅपवर—व्हॉइस, मजकूर आणि इमोजी वापरून भेटतो." },
                 { title: "सामुदायिक कनेक्शन", text: "जेव्हा त्यांना अधिक वैयक्तिक काळजीची आवश्यकता असते, तेव्हा आम्ही महिलांना प्रमाणित डॉक्टर आणि प्रमाणित संसाधनांशी जोडतो." }
             ],
-            copyright: "© 2025. सर्व हक्क राखीव."
+            copyright: "© 2025. सर्व हक्क राखीव.",
+            logout: "लॉगआउट"
         },
         gu: {
             home: "હોમ",
@@ -109,7 +118,8 @@ const About = () => {
                 { title: "ડિજિટલ સરળતા", text: "અમે મહિલાઓને ત્યાં મળીએ જ્યાં તેઓ પહેલેથી હાજર છે—વોટ્સએપ પર—વોઇસ, લખાણ અને ઇમોજી સાથે." },
                 { title: "સમુદાયિક કનેક્શન", text: "જ્યારે તેઓ વધુ વ્યક્તિગત કાળજીની જરૂરિયાત હોય ત્યારે અમે મહિલાઓને પ્રમાણિત ડૉક્ટર્સ અને પ્રમાણિત સંસાધનો સાથે જોડીએ છીએ." }
             ],
-            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત."
+            copyright: "© 2025. સર્વ અધિકાર આરક્ષિત.",
+            logout: "લૉગ આઉટ"
         }
     };
 
@@ -118,20 +128,32 @@ const About = () => {
     return (
         <div className="bg-[#FFFFE0] min-h-screen flex flex-col">
             {/* Header */}
-            <header className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+            <header className="relative flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 space-y-4 sm:space-y-0">
+
+                {/* Logo */}
                 <div className="flex items-center space-x-2">
-                    <Link to="/"><img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" /></Link>
+                    <Link to="/home">
+                        <img src={logo} alt="Sakhi Didi Logo" className="w-20 h-20 object-contain" />
+                    </Link>
                 </div>
 
+                {/* Navigation */}
                 <nav className="flex flex-col sm:flex-row items-center sm:space-x-5 text-purple-800 font-medium text-xs sm:text-lg space-y-2 sm:space-y-0">
-                    <Link to="/">{t.home}</Link>
-                    <Link to="/team">{t.team}</Link>
-                    <Link to="/blog">{t.blog}</Link>
-                    <Link to="/health-assessment">{t.checkup}</Link>
-                    <Link to="/period-tracker">{t.periodTracker}</Link>
+                    <Link to="/home" className="hover:underline">{t.home}</Link>
+                    <Link to="/team" className="hover:underline">{t.team}</Link>
+                    <Link to="/blog" className="hover:underline">{t.blog}</Link>
+                    <Link to="/health-assessment" className="hover:underline">{t.checkup}</Link>
+                    <Link to="/period-tracker" className="hover:underline">{t.periodTracker}</Link>
                     <Link to="/about" className="underline text-[#910AE4]">{t.about}</Link>
                 </nav>
 
+                {/* Logout Button */}
+                <button
+                    onClick={handleLogout}
+                    className=" bg-purple-800 text-[#FFFFE0] px-3 py-1.5 rounded-md text-sm font-medium shadow-lg hover:bg-purple-900 transition"
+                >
+                    {t.logout}
+                </button>
             </header>
 
             {/* Mission Section */}
