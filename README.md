@@ -75,8 +75,3 @@ npm run build
 * *AI-Driven Healthcare Chatbot using Data Science with Python*
 * *Voice Enabled Chatbot for Healthcare – VI Sem Project*
 
----
-
-## 👩‍💻 Team – Empower Her
-
-Built with 💙 for **Smart India Hackathon 2025**
