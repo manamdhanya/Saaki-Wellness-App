@@ -1,6 +1,6 @@
 # Saaki – AI-Driven Public Health Chatbot  
 
-Saaki (Team Empower Her) is an **AI-powered health chatbot** designed for the **Smart India Hackathon 2025** under the *MedTech / BioTech / HealthTech* theme.  
+Saaki is an **AI-powered health chatbot** designed under the *MedTech / BioTech / HealthTech* theme.  
 It provides **disease awareness, maternal and menstrual health guidance, and infectious disease information** for rural women and communities, helping reduce misinformation and empower better healthcare decisions.  
 
 ---
